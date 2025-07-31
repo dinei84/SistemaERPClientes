@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro de Carga</title>
+  <link rel="stylesheet" href="stylescarga.css" />
+  <link rel="stylesheet" href="../../menu.css" />
+  <link rel="stylesheet" href="../../css/loading.css" />
+  <link rel="shortcut icon" href="../../assets/favcom.png" type="image/x-icon" />
+</head>
+<body>
+  <div class="loading-overlay" id="loadingOverlay">
+    <svg class="loading-svg" viewBox="0 0 50 50">
+      <circle cx="25" cy="25" r="20" />
+    </svg>
+  </div>
+
+  <h1 id="form-title">Cadastrar Carga</h1>
+  <form id="carga-form">
+    <div class="form-group">
+      <label for="datanfe">Emissão NF:</label>
+      <input type="date" id="datanfe" />
+    </div>
+
+    <div class="form-group">
+      <label for="placa">Placa:</label>
+      <input type="text" id="placa" required />
+    </div>
+
+    <div class="form-group">
+      <label for="localizacao">Localização Atual:</label>
+      <input type="text" id="localizacao" required />
+    </div>
+
+    <div class="form-group">
+      <label for="status">Observação:</label>
+      <select id="status">
+        <option value="TRAJETO">Em Trajeto</option>
+        <option value="MANUTENÇÃO">Em Manutenção</option>
+        <option value="DESCARREGADO">Descarregado</option>
+        <option value="AGUARDANDO NFe">Aguardando NFe</option>
+        <option value="APEAÇÃO">Apeação</option>
+        <option value="AGUARDANDO DESCARGA">Aguardando Descarga</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="mercadoria">Mercadoria:</label>
+      <input type="text" id="mercadoria" required />
+    </div>
+
+    <div class="form-group">
+      <label for="nfe">N° Nota:</label>
+      <input type="text" id="nfe" />
+    </div>
+
+    <div class="form-group">
+      <label for="cte">N° Conhecimento:</label>
+      <input type="number" id="cte" />
+    </div>
+
+    <div class="form-group">
+      <label for="previsao">Previsão de Entrega:</label>
+      <input type="date" id="previsao" />
+    </div>
+
+    <div class="form-group">
+      <label>Status Diário:</label>
+      <input type="radio" id="statusdiario-check" name="statusdiario" value="Check" required /> Check
+      <input type="radio" id="statusdiario-notcheck" name="statusdiario" value="Not Check" required /> Not Check
+    </div>
+
+    <div class="form-group">
+      <label for="cliente">Cliente:</label>
+      <input type="text" id="cliente" />
+    </div>
+
+    <div class="form-group">
+      <label for="telefone">Telefone Motorista / Gestor:</label>
+      <input type="tel" id="telefone" pattern="\d{10,11}" title="Telefone deve ter 10 ou 11 dígitos" />
+    </div>
+
+    <div class="form-group">
+      <label for="nome">Nome Motorista:</label>
+      <input type="text" id="nome" />
+    </div>
+
+    <div class="form-group">
+      <label for="comentario">Seu comentário:</label>
+      <textarea id="comentario" name="comentario" rows="5" cols="40" placeholder="Digite seu comentário aqui..."></textarea>
+    </div>
+
+    <button type="submit">Salvar</button>
+    <button type="button" onclick="window.location.href='indextracking.html'">Cancelar</button>
+  </form>
+
+  <script type="module" src="js/cadastro.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar/Editar Frete</title>
+    <link rel="stylesheet" href="css/index01.css">
+    <link rel="stylesheet" href="../../menu.css">
+    <link rel="shortcut icon" href="../../assets/favcom.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/loading.css">
+</head>
+<body>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <svg class="loading-svg" viewBox="0 0 50 50">
+            <circle cx="25" cy="25" r="20"/>
+        </svg>
+    </div>
+
+    <div class="container">
+        <h2>Adicionar/Editar Frete</h2>
+        <form id="formFrete">
+            <label for="data">Data</label>
+            <input type="date" id="data" required>
+
+            <label for="centrodecusto">Centro de Custo</label>
+            <select id="centrodecusto" required>
+                <option value="">Selecione um centro de custo</option>
+                <option value="ferro">Ferro</option>
+                <option value="fertilizante">Fertilizante</option>
+                <option value="imbituba">Imbituba</option>
+                <option value="paranagua">Paranaguá</option>
+            </select>
+
+            <label for="cliente">Cliente</label>
+            <input type="text" id="cliente" required>
+
+            <label for="representante">Representante</label>
+            <input type="text" id="representante">
+
+            <label for="expedidor">Expedidor (ARMAZEM)</label>
+            <input type="text" id="expedidor">
+
+            <label for="cnpj">CNPJ do Destinatário</label>
+            <input type="text" id="cnpj">
+
+            <label for="ie">Inscrição Estadual do Destinatário</label>
+            <input type="text" id="ie">
+
+            <label for="telefone">Telefone do Destinatário</label>
+            <input type="text" id="telefone">
+
+            <label for="destinatario">Destinatário</label>
+            <input type="text" id="destinatario">
+
+            <label for="recebedor">Recebedor</label>
+            <input type="text" id="recebedor">
+
+            <label for="destino">Destino Final</label>
+            <input type="text" id="destino" required>
+
+            <label for="estado">Estado</label>
+            <input type="text" id="estado">
+
+            <label for="destinotroca">Destino Troca (se houver)</label>
+            <input type="text" id="destinotroca">
+
+            <label for="pedido">Pedido</label>
+            <input type="text" id="pedido">
+
+            <label for="frempresa">Frete Empresa</label>
+            <input type="text" id="frempresa" value="R$ ">
+
+            <label for="produto">Produto</label>
+            <input type="text" id="produto">
+
+            <label for="embalagem">Embalagem</label>
+            <input type="text" id="embalagem">
+
+            <label for="liberado">Quantidade Total (Toneladas Ex.: 40,000 ton (quarenta toneladas))</label>
+            <input type="text" id="liberado" required placeholder="Digite: 37000 ou 37,000">
+
+            <label for="carregado">Total Já Carregado</label>
+            <input type="text" id="carregado" required placeholder="Digite: 37000 ou 37,000">
+            
+            <label for="saldo">Saldo Disponível</label>
+            <input type="text" id="saldo" readonly>
+
+            <label for="motorista">Frete Motorista</label>
+            <input type="text" id="motorista" value="R$ ">
+
+            <label for="operacao">Operação</label>
+            <input type="text" id="operacao">
+
+            <label for="lote">Lote</label>
+            <input type="text" id="lote">
+
+            <label for="localizacao">Localização</label>
+            <textarea id="localizacao"></textarea>
+
+            <label for="observacao">Observação</label>
+            <textarea id="observacao"></textarea>
+
+            <button type="submit">Salvar Frete</button>
+            <button type="button" class="btn-voltar" id="btnVoltar">Voltar para Lista de Fretes</button>
+        </form>
+    </div>
+
+    <script type="module" src="js/cadastro_frete.js"></script>
+</body>
+</html>

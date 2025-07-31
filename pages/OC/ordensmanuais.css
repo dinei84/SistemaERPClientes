@@ -1,0 +1,139 @@
+:root {
+    --primary-color: #721738;
+    --secondary-color: #333;
+    --tertiary-color: #560e24;
+    --quaternary-color: #fff;
+    --quintenary-color: #66253d;
+}
+
+.container {
+    max-width: 800px;
+    max-height: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 20px;
+
+}
+h1{
+    text-align: center;
+    padding-top: 5px;
+}
+
+/* pgua */
+.container .ordempgua {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container .ordempgua img {
+    width: 90%;
+    height: auto;
+    margin-top: 20px;
+    object-fit: contain;
+}
+
+.ordempgua img {
+    max-height: 500px;
+    margin: auto;
+    max-width: 350px;
+}
+
+.container .pgua{
+    max-width: 150px;
+}
+
+/* araquari */
+.container .ordemaraquari {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container .ordemaraquari img {
+    width: 90%;
+    height: auto;
+    margin-top: 20px;
+    object-fit: contain;
+}
+
+.ordemaraquari img {
+    max-height: 500px;
+    margin: auto;
+    max-width: 350px;
+}
+
+.container .araquari{
+    max-width: 150px;
+}
+
+
+.ordempgua,
+.ordemaraquari {
+    margin-top: 60px;
+    width: 350px;
+    height: 400px;
+    background-color: var(--quintenary-color);
+    border-radius: 15px;
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ordempgua,
+    .ordemaraquari {
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Estilos para a lista de ordens */
+.lista-ordens {
+    margin-top: 60px;
+    width: 350px;
+    background-color: var(--quintenary-color);
+    border-radius: 15px;
+    padding: 20px;
+    flex: 1;
+}
+
+.lista-ordens h1 {
+    color: var(--quaternary-color);
+    margin-bottom: 20px;
+}
+
+.ordens-lista {
+    list-style-position: inside;
+    padding: 0;
+    margin: 0;
+}
+
+.ordens-lista li {
+    margin-bottom: 15px;
+    color: var(--quaternary-color);
+}
+
+.ordens-lista a {
+    color: var(--quaternary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.ordens-lista a:hover {
+    color: #ffd700;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .lista-ordens {
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 20px;
+    }
+}
