@@ -190,7 +190,7 @@ html, body {
 /* ESTILOS DA TABELA COMPACTA - AJUSTADO */
 .table-wrapper {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 0 15px;
 }

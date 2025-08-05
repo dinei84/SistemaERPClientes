@@ -95,12 +95,17 @@ h1{
 
 /* Estilos para a lista de ordens */
 .lista-ordens {
-    margin-top: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 350px;
     background-color: var(--quintenary-color);
     border-radius: 15px;
     padding: 20px;
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .lista-ordens h1 {
@@ -132,8 +137,11 @@ h1{
 
 @media (max-width: 768px) {
     .lista-ordens {
-        width: 100%;
+        width: 90%;
         max-width: 350px;
-        margin-bottom: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }

@@ -38,7 +38,7 @@ body {
 }
 
 .page-container {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -58,7 +58,7 @@ body {
     box-shadow: var(--shadow-medium);
     padding: 2rem;
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     transition: var(--transition);
 }
@@ -77,6 +77,18 @@ body {
     width: 100%;
     margin: 0 auto;
     transition: var(--transition);
+}
+
+/* Specific adjustments for lista_fretes.html - 20% wider container */
+.table-card.lista-fretes {
+    max-width: 1440px; /* 1200px * 1.2 = 1440px */
+    width: 100%;
+}
+
+/* Specific adjustments for lista_carregamento.html - 35% wider container */
+.table-card.lista-carregamento {
+    max-width: 1620px; /* 1200px * 1.35 = 1620px */
+    width: 100%;
 }
 
 .table-card:hover {
@@ -128,6 +140,80 @@ body {
     font-weight: 400;
 }
 
+/* Form Sections */
+.form-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-color);
+}
+
+.form-section h3 {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="number"],
+.form-group input[type="file"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+    background-color: var(--card-background);
+    color: var(--text-primary);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--tertiary-color);
+    box-shadow: 0 0 0 3px rgba(29, 214, 242, 0.1);
+    transform: translateY(-1px);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
 /* Table Controls */
 .table-controls {
     display: flex;
@@ -136,6 +222,29 @@ body {
     margin-bottom: 2rem;
     gap: 1rem;
     flex-wrap: wrap;
+}
+
+.filters-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-select {
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+    background-color: var(--card-background);
+    color: var(--text-primary);
+    min-width: 200px;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: var(--tertiary-color);
+    box-shadow: 0 0 0 3px rgba(29, 214, 242, 0.1);
 }
 
 .search-container {
@@ -172,55 +281,30 @@ body {
     flex-wrap: wrap;
 }
 
-/* Form Styling */
-.driver-form {
+/* Summary Info */
+.summary-info {
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.form-group label {
-    font-weight: 600;
-    color: var(--text-primary);
-    font-size: 1rem;
-    margin-bottom: 0.25rem;
-}
-
-.form-group input[type="text"] {
-    width: 100%;
-    padding: 1rem 1.25rem;
-    border: 2px solid var(--border-color);
+    justify-content: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--primary-color), #004a8c);
+    color: white;
     border-radius: var(--border-radius);
-    font-size: 1rem;
-    transition: var(--transition);
-    background-color: var(--card-background);
-    color: var(--text-primary);
+    box-shadow: var(--shadow-light);
 }
 
-.form-group input[type="text"]:focus {
-    outline: none;
-    border-color: var(--tertiary-color);
-    box-shadow: 0 0 0 3px rgba(29, 214, 242, 0.1);
-    transform: translateY(-1px);
-}
-
-.form-group input[type="text"]::placeholder {
-    color: var(--text-secondary);
-    opacity: 0.7;
+.total-saldo {
+    font-size: 1.25rem;
+    font-weight: 600;
 }
 
 /* Button Styling */
 .form-actions {
     display: flex;
     gap: 1rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .btn {
@@ -282,36 +366,18 @@ body {
     box-shadow: var(--shadow-light);
 }
 
-/* List Action */
-.list-action {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 2px solid var(--border-color);
-}
-
 /* Table Wrapper */
 .table-wrapper {
     overflow-x: auto;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-light);
+    margin-bottom: 2rem;
 }
 
 /* Table Styling */
-#table-container {
-    background: var(--card-background);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-medium);
-    padding: 2rem;
-    margin-top: 2rem;
-    overflow: hidden;
-}
-
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 1rem;
     background: var(--card-background);
     border-radius: var(--border-radius);
     overflow: hidden;
@@ -335,6 +401,18 @@ th {
     letter-spacing: 0.5px;
 }
 
+/* Specific table adjustments for lista_carregamento.html - smaller font and padding */
+.lista-carregamento table th,
+.lista-carregamento table td {
+    font-size: 0.8rem;
+    padding: 0.6rem;
+}
+
+.lista-carregamento table th {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+}
+
 td {
     background: var(--card-background);
     transition: var(--transition);
@@ -351,6 +429,48 @@ tr:hover td {
     justify-content: center;
 }
 
+/* Popup Modal */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--card-background);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-medium);
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+.close-btn:hover {
+    color: var(--quaternary-color);
+}
+
 /* Responsive Design */
 @media screen and (max-width: 1024px) {
     .main-content {
@@ -358,7 +478,11 @@ tr:hover td {
     }
     
     .form-card {
-        max-width: 500px;
+        max-width: 700px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
     }
     
     .table-controls {
@@ -401,6 +525,10 @@ tr:hover td {
         font-size: 1rem;
     }
     
+    .form-section {
+        padding: 1rem;
+    }
+    
     .form-actions {
         flex-direction: column;
     }
@@ -439,6 +567,11 @@ tr:hover td {
         box-shadow: -2px 0 5px rgba(0,0,0,0.1);
         min-width: 100px;
     }
+    
+    .popup-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -462,6 +595,10 @@ tr:hover td {
     }
     
     .form-group input[type="text"],
+    .form-group input[type="date"],
+    .form-group input[type="number"],
+    .form-group select,
+    .form-group textarea,
     .search-input {
         padding: 0.875rem 1rem;
         font-size: 16px; /* Prevents zoom on iOS */
@@ -490,6 +627,16 @@ tr:hover td {
     .table-actions .btn {
         width: 100%;
     }
+    
+    .filters-container {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .filter-select {
+        width: 100%;
+        min-width: auto;
+    }
 }
 
 /* Animation for form appearance */
@@ -511,8 +658,11 @@ tr:hover td {
 
 /* Focus states for accessibility */
 .btn:focus,
-.form-group input[type="text"]:focus,
-.search-input:focus {
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus,
+.search-input:focus,
+.filter-select:focus {
     outline: 2px solid var(--tertiary-color);
     outline-offset: 2px;
 }
@@ -537,4 +687,4 @@ tr:hover td {
     color: #dc3545;
     font-size: 0.875rem;
     margin-top: 0.25rem;
-}
+} 

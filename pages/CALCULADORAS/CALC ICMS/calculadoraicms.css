@@ -1,9 +1,9 @@
 :root {
-    --primary-color: #721738;
-    --secondary-color: #333;
-    --tertiary-color: #560e24;
-    --quaternary-color: #fff;
-    --quintenary-color: #66253d;
+    --primary-color: #003867;
+  --secondary-color: #f3501e;
+  --tertiary-color: #1DD6F2;
+  --quaternary-color: #F51102;
+  --quintenary-color: #F5AD02;
 }
 
 body {
@@ -27,19 +27,26 @@ header {
     justify-content: center; /* Alinha os itens no centro verticalmente */
     width: 100%;
     padding: 20px 0;
-    background-color: var(--primary-color);
+    background-color: var(--quaternary-color);
     color: var(--quaternary-color);
     text-align: center;
 }
 
 header h1 {
     margin-bottom: 10px;
+    color: black;
+    font-size: 3rem;
+}
+
+header p {
+    font-size: 1.5rem;
+    color: black;
 }
 
 main {
     width: 95%; /* Largura responsiva para dispositivos menores */
     max-width: 400px; /* Largura máxima para telas maiores */
-    background-color: var(--quaternary-color);
+    background-color: white;
     margin: 20px auto; /* Centraliza e adiciona margem responsiva */
     padding: 20px;
     border: 4px solid var(--secondary-color);
@@ -112,14 +119,14 @@ main {
     font-size: 1em;
     font-weight: bold;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.642);
-    background-color: var(--quaternary-color);
+    background-color: var(--primary-color);
     color: var(--secondary-color);
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .botoes button:hover {
-    background-color: var(--tertiary-color);
+    background-color: var(--primary-color);
     color: var(--quaternary-color);
 }
 
