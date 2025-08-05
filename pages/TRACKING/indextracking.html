@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Monitoramento de Cargas</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/shared-styles.css">
   <link rel="stylesheet" href="../../css/menu.css">
   <link rel="shortcut icon" href="../../assets/favcom.png" type="image/x-icon">
 </head>
@@ -96,44 +96,63 @@
     </nav>
 
 
-    <div class="main-content">
-        <h1 class="page-title">Monitoramento de Cargas</h1>
-        
-        <div class="buttons-container">
-          <button class="action-button" onclick="window.location.href='cadastro.html'">Adicionar Carga</button>
-          <button class="action-button" onclick="captureAndDownload()">Imprimir/Baixar</button>
-          <button class="action-button" onclick="captureAndShareSelected()">Compartilhar</button>
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <div class="page-container">
+            <div class="content-wrapper">
+                <div class="table-card">
+                    <header class="table-header">
+                        <h1>Monitoramento de Cargas</h1>
+                        <p class="table-subtitle">Acompanhamento completo do status das cargas em tempo real</p>
+                    </header>
+                    
+                    <div class="table-controls">
+                        <div class="table-actions">
+                            <button class="btn btn-primary" onclick="window.location.href='cadastro.html'">
+                                <span class="btn-icon">➕</span>
+                                Adicionar Carga
+                            </button>
+                            <button class="btn btn-secondary" onclick="captureAndDownload()">
+                                <span class="btn-icon">📄</span>
+                                Imprimir/Baixar
+                            </button>
+                            <button class="btn btn-outline" onclick="captureAndShareSelected()">
+                                <span class="btn-icon">📤</span>
+                                Compartilhar
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" class="table-checkbox" id="selectAll" onclick="toggleSelectAll()"></th>
+                                    <th>Emissão da NFe</th>
+                                    <th>Placa</th>
+                                    <th>Localização</th>
+                                    <th>Observação</th>
+                                    <th>Mercadoria</th>
+                                    <th>N° da NFe</th>
+                                    <th>N° Conhecimento</th>
+                                    <th>Previsão</th>
+                                    <th>Status</th>
+                                    <th>Cliente</th>
+                                    <th>Telefone</th>
+                                    <th>Motorista</th>
+                                    <th>Comentário</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cargas-lista">
+                                <!-- Dados serão inseridos aqui via JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div class="table-wrapper">
-          <div class="table-container">
-            <table class="data-table">
-                <thead>
-                    <tr>
-                      <th class="col-checkbox"><input type="checkbox" class="table-checkbox" id="selectAll" onclick="toggleSelectAll()"></th>
-                      <th class="col-date">Emissão da nfe</th>
-                      <th class="col-plate">Placa</th>
-                      <th class="col-location">Localização</th>
-                      <th class="col-optional">Observação</th>
-                      <th class="col-mercadoria">Mercadoria</th>
-                      <th class="col-number">N° da nfe</th>
-                      <th class="col-number">N° Conhecimento</th>
-                      <th class="col-date">Previsão</th>
-                      <th class="col-optional">Status</th>
-                      <th class="col-client">Cliente</th>
-                      <th class="col-phone">Telefone</th>
-                      <th class="col-driver">Motorista</th>
-                      <th class="col-optional">Comentário</th>
-                      <th class="col-actions">Ações</th>
-                    </tr>
-                  </thead>
-              <tbody id="cargas-lista">
-                <!-- Dados serão inseridos aqui via JavaScript -->
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
+    </main>
     
 
 

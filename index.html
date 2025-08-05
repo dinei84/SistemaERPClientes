@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/menu.css">
-    <link rel="stylesheet" href="landing.css">
     <link rel="shortcut icon" href="assets/favcom.png" type="image/x-icon">
     <title>ERP01 - Sistema de Gestão de Transporte</title>
 </head>
@@ -19,12 +18,15 @@
     </div>
 
     <style>
+
+        @import url('css/colors.css');
+
         .landing-container {
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(rgba(114, 23, 56, 0.9), rgba(86, 14, 36, 0.9));
+            /* background: linear-gradient(var(--cor-primaria), rgba(86, 14, 36, 0.9)); */
         }
 
         .welcome-card {
@@ -38,7 +40,7 @@
         }
 
         .welcome-card h1 {
-            color: #721738;
+            color: var(--primary-color);
             margin-bottom: 1rem;
         }
 
@@ -55,7 +57,7 @@
 
         .login-button {
             display: inline-block;
-            background: #721738;
+            background: var(--primary-color);
             color: white;
             padding: 1rem 2rem;
             border-radius: 5px;
@@ -64,7 +66,7 @@
         }
 
         .login-button:hover {
-            background: #560e24;
+            background: var(--secondary-color);
         }
     </style>
 </body>
