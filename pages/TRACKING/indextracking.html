@@ -7,6 +7,40 @@
   <link rel="stylesheet" href="css/shared-styles.css">
   <link rel="stylesheet" href="../../css/menu.css">
   <link rel="shortcut icon" href="../../assets/favcom.png" type="image/x-icon">
+  <style>
+    /* Table styling adjustments */
+    .table-wrapper {
+      overflow-x: auto;
+      width: 100%;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px; /* Reduced font size */
+    }
+    
+    th, td {
+      padding: 6px 8px; /* Reduced padding */
+      text-align: left;
+      border-bottom: 1px solid #e0e0e0;
+      white-space: nowrap; /* Prevent text wrapping */
+    }
+    
+    th {
+      background-color: #f5f5f5;
+      font-weight: 600;
+    }
+    
+    tr:hover {
+      background-color: #f9f9f9;
+    }
+    
+    /* Make the table more compact */
+    .table-card {
+      padding: 10px;
+    }
+  </style>
 </head>
 <body>
 
@@ -128,13 +162,13 @@
                             <thead>
                                 <tr>
                                     <th><input type="checkbox" class="table-checkbox" id="selectAll" onclick="toggleSelectAll()"></th>
-                                    <th>Emissão da NFe</th>
+                                    <th>Data NFe</th>
                                     <th>Placa</th>
                                     <th>Localização</th>
-                                    <th>Observação</th>
+                                    <th>Obs.</th>
                                     <th>Mercadoria</th>
-                                    <th>N° da NFe</th>
-                                    <th>N° Conhecimento</th>
+                                    <th>N° NFe</th>
+                                    <th>N° CTE</th>
                                     <th>Previsão</th>
                                     <th>Status</th>
                                     <th>Cliente</th>
