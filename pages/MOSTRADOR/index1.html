@@ -6,165 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>G10 Transportes - Gestão de Fretes</title>
     <link rel="stylesheet" href="../../css/menu.css">
+    <link rel="stylesheet" href="css/shared-styles.css">
     <link rel="shortcut icon" href="../../assets/favcom.png" type="image/x-icon">
-    
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* background-color: #f8f9fa; */
-            background-image: url('../../assets/g10ok.jpeg');
-            opacity: 1.0; /* Ajuste para transparência */
-            color: #333;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-    
-        .container {
-            width: 95%;
-            max-width: 600px;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-    
-        .form-container {
-            margin-bottom: 20px;
-        }
-    
-        .form-container h2 {
-            text-align: center;
-            color: #560e24;
-            margin-bottom: 20px;
-        }
-    
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 15px;
-        }
-    
-        .form-group label {
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-    
-        .form-group input[type="text"],
-        .form-group input[type="number"],
-        .form-group select {
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-            margin-bottom: 10px;
-        }
-    
-        .form-group input[type="text"]:focus,
-        .form-group input[type="number"]:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #560e24;
-        }
-    
-        .btn-primary,
-        .btn-secondary {
-            display: inline-block;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: background-color 0.2s ease;
-            margin-top: 10px;
-        }
-    
-        .btn-primary {
-            background-color: #560e24;
-            color: white;
-        }
-    
-        .btn-secondary {
-            background-color: #6c757d;
-            color: white;
-            margin-left: 10px;
-        }
-    
-        .btn-primary:hover {
-            background-color: #3d0918;
-        }
-    
-        .btn-secondary:hover {
-            background-color: #5a6268;
-        }
-    
-        #btnMostrarFretes {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            text-align: center;
-            background-color: #560e24;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: background-color 0.2s ease;
-            margin-top: 20px;
-        }
-    
-        #btnMostrarFretes:hover {
-            background-color: #3d0918;
-        }
-    
-        /* Estilos responsivos */
-        @media (min-width: 768px) {
-            .form-group {
-                flex-direction: row;
-                align-items: center;
-            }
-    
-            .form-group label {
-                width: 30%;
-                text-align: right;
-                padding-right: 10px;
-            }
-    
-            .form-group input[type="text"],
-            .form-group input[type="number"],
-            .form-group select {
-                width: 70%;
-                margin-bottom: 0;
-            }
-    
-            .btn-primary,
-            .btn-secondary {
-                margin-top: 0;
-            }
-        }
-    
-        @media (max-width: 320px) {
-            .container {
-                padding: 10px;
-            }
-    
-            .form-group input[type="text"],
-            .form-group input[type="number"],
-            .form-group select,
-            .btn-primary,
-            .btn-secondary,
-            #btnMostrarFretes {
-                font-size: 0.9rem;
-            }
-        }
-    </style>
     
 </head>
 
@@ -250,48 +93,91 @@
         </ul>
     </nav>
 
-    <div class="container">
-        <div class="form-container">
-            <h2>Adicionar/Editar Frete</h2>
-            <form id="freteForm">
-                <div class="form-group">
-                    <input type="text" id="origem" placeholder="Origem" value="São Francisco do Sul" readonly>
-                    <select id="uf" required>
-                        <option value="SC - SFCO">Santa Catarina - SFCO</option>
-                        <option value="">Selecione a UF</option>                        
-                        <option value="SC - IMBITUBA">Santa Catarina - Imbituba</option>
-                        <option value="MT">Mato Grosso</option>
-                        <option value="GO">Goiás</option>
-                        <option value="RO">Rondônia</option>
-                        <option value="PA">Pará</option>
-                        <option value="SP">São Paulo</option>
-                        <option value="PR">Paraná</option>
-                        <option value="MS">Mato Grosso do Sul</option>
-                        <option value="MG">Minas Gerais</option>
-                    </select>
-                    <input type="text" id="destino" placeholder="Destino" required>
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <div class="page-container">
+            <div class="content-wrapper">
+                <div class="form-card">
+                    <header class="form-header">
+                        <h1>Adicionar/Editar Frete</h1>
+                        <p class="form-subtitle">Gestão completa de fretes para exibição</p>
+                    </header>
+                    
+                    <form id="freteForm">
+                        <div class="form-section">
+                            <h3>Informações do Frete</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="origem">Origem</label>
+                                    <input type="text" id="origem" placeholder="Origem" value="São Francisco do Sul" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="uf">UF</label>
+                                    <select id="uf" required>
+                                        <option value="SC - SFCO">Santa Catarina - SFCO</option>
+                                        <option value="">Selecione a UF</option>                        
+                                        <option value="SC - IMBITUBA">Santa Catarina - Imbituba</option>
+                                        <option value="MT">Mato Grosso</option>
+                                        <option value="GO">Goiás</option>
+                                        <option value="RO">Rondônia</option>
+                                        <option value="PA">Pará</option>
+                                        <option value="SP">São Paulo</option>
+                                        <option value="PR">Paraná</option>
+                                        <option value="MS">Mato Grosso do Sul</option>
+                                        <option value="MG">Minas Gerais</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="destino">Destino</label>
+                                    <input type="text" id="destino" placeholder="Destino" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="valor">Valor (R$)</label>
+                                    <input type="number" id="valor" step="0.01" placeholder="Valor (R$)" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="tipo">Tipo de Carga</label>
+                                    <select id="tipo" required>
+                                        <option value="">Tipo de Carga</option>
+                                        <option value="BIG BAG">BIG BAG</option>
+                                        <option value="GRANEL">Granel</option>
+                                        <option value="OUTROS">OUTROS</option>
+                                        <option value="BOBINA">BOBINA</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="observacoes">Observações</label>
+                                    <input type="text" id="observacoes" placeholder="Observações (ex: 50T)">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="btnSalvar">
+                                <span class="btn-icon">💾</span>
+                                Adicionar Frete
+                            </button>
+                            <button type="button" class="btn btn-secondary" onclick="cancelarEdicao()">
+                                <span class="btn-icon">❌</span>
+                                Cancelar
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div class="form-actions" style="margin-top: 2rem;">
+                        <button id="btnMostrarFretes" class="btn btn-primary" style="width: 100%;">
+                            <span class="btn-icon">📋</span>
+                            Mostrar Fretes
+                        </button>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <input type="number" id="valor" step="0.01" placeholder="Valor (R$)" required>
-                    <select id="tipo" required>
-                        <option value="">Tipo de Carga</option>
-                        <option value="BIG BAG">BIG BAG</option>
-                        <option value="GRANEL">Granel</option>
-                        <option value="OUTROS">OUTROS</option>
-                        <option value="BOBINA">BOBINA</option>
-
-                    </select>
-                    <input type="text" id="observacoes" placeholder="Observações (ex: 50T)">
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn-primary" id="btnSalvar">Adicionar Frete</button>
-                    <button type="button" class="btn-secondary" onclick="cancelarEdicao()">Cancelar</button>
-                </div>
-            </form>
+            </div>
         </div>
-
-        <button id="btnMostrarFretes" class="btn-primary">Mostrar Fretes</button>
-    </div>
+    </main>
 
     <script src="../../js/menu.js"></script>
 
